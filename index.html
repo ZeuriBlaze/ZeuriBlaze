@@ -4,18 +4,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Links</title>
     <style>
-        body { font-family: sans-serif; display: flex; flex-direction: column; align-items: center; background-color: #f0f2f5; margin-top: 50px; }
-        .link-button { 
-            display: block; width: 300px; padding: 15px; margin: 10px; 
-            text-align: center; background-color: #007bff; color: white; 
-            text-decoration: none; border-radius: 25px; font-weight: bold; 
+     body {
+    background: linear-gradient(135deg, #ffb347 0%, #87ceeb 100%);
+    background-attachment: fixed;
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: sans-serif;
         }
         .link-button:hover { background-color: #0056b3; }
     </style>
+    def hex_to_rgb(hex_color):
+    hex_color = hex_color.lstrip('#')
+    return tuple(int(hex_color[i:i+2], 16) for i in (0, 2, 4))
+def rgb_to_hex(rgb):
+    return '#{:02x}{:02x}{:02x}'.format(*rgb)
+# Standard Light Orange and Sky Blue
+light_orange = "#ffb347"
+sky_blue = "#87ceeb"
+print(f"Light Orange: {light_orange}")
+print(f"Sky Blue: {sky_blue}")
 </head>
 <body>
-    <h1>@YourName</h1>
-    <a class="link-button" href="https://zeuriblaze.github.io/brotato-game/" target="_blank">Brotato: Paws-and-Claws-Update</a>
-    <a class="link-button" href="https://zeuriblaze.github.io/getaway-shootout/" target="_blank">Getaway-Shootout</a>
+    <h1>Nothing Here Trust Website</h1>
+    <a class="link-button" href="https://zeuriblaze.github.io/brotato-game/" target="_blank">Brotato: Paws and Claws Update</a>
+    <a class="link-button" href="https://zeuriblaze.github.io/getaway-shootout/" target="_blank">Getaway Shootout</a>
+    <a class="link-button" href="https://script.google.com/a/macros/henricostudents.org/s/AKfycbyFnQB6u1X4pfOoelwny22_PiSI5nhdZ_LIqzOZ-NPIJFi4UlAyH51F0JSikRTYaFMLUQ/exec" target="_blank">Run 3</a>
 </body>
 </html>
