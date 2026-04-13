@@ -1,0 +1,97 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nothing Here Trust</title>
+    <style>
+        body {
+            background: linear-gradient(135deg, #ffb347 0%, #87ceeb 100%);
+            background-attachment: fixed;
+            min-height: 100vh;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            padding: 40px 10px;
+        }
+
+        h1 {
+            color: white;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+            margin-bottom: 30px;
+        }
+        .button-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+            width: 100%;
+            max-width: 800px;
+        }
+        .link-button {
+            width: calc(23% - 10px); 
+            min-width: 80px;
+            padding: 20px 5px;
+            text-align: center;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 14px;
+            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.3);
+            color: #ffffff;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            
+            transition: transform 0.2s, background 0.2s;
+            box-sizing: border-box;
+        }
+
+        .link-button:hover {
+            transform: translateY(-3px);
+            background: rgba(255, 255, 255, 0.5);
+        }
+        @media (max-width: 600px) {
+            .link-button {
+                width: calc(48% - 10px);
+                font-size: 13px;
+            }
+        }
+    </style>
+</head>
+<body>
+ <div class="search-wrap">
+
+        <span class="search-icon">🔍</span>
+
+        <input type="text" id="game-search" placeholder="Search games…" oninput="renderGames()" />
+
+      </div>
+
+ <div class="select-wrap">
+
+<select id="*yourpagename*-letter-select" onchange="render*yourpagename*()"></select>
+    <h1>Nothing Here Trust Website</h1>
+
+    <div class="button-container">
+    <a class="link-button" href="https://zeuriblaze.github.io/brotato-game/">Brotato: Paws and Claws</a>
+    <a class="link-button" href="https://zeuriblaze.github.io/hollowknightgame.com/">Hollow Knight</a>
+    <a class="link-button" href="https://zeuriblaze.github.io/RetroBowl/">RetroBowl</a>
+        
+        <a class="link-button" href="https://zeuriblaze.github.io/uhueibjajgvgvjbhjbHJBGuih-UBHhjLUIBjgbGHLBbJBVgbLGTYf6utT67Tyig7UIf6uyUT8t6uUGUJGBylvtyg57y/" target="_blank">Tag</a>
+        <a class="link-button" href="https://zeuriblaze.github.io/emeraldbotservers-777users/" target="_blank">Celeste</a>
+        <a class="link-button" href="https://zeuriblaze.github.io/flyingoutofthewold/" target="_blank">Sky Riders</a>
+          <a class="link-button" href="https://zeuriblaze.github.io/spamliketheresnotomarrow/" target="_blank">Cookie Clicker</a>
+        <a class="link-button" href="https://zeuriblaze.github.io/parkour/" target="_blank">Dadish</a>
+         <a class="link-button" href="https://zeuriblaze.github.io/fishfishfishfishfishfishfishfishfishfishfishfishfishfishfishfishfishfishfishfishfish/" target="_blank">Tiny Fishing</a>
+         <a class="link-button" href="https://zeuriblaze.github.io/smashorpass_youpickdeathandestruction/" target="_blank">Burrito Bison</a>
+                 <a class="link-button" href="  https://zeuriblaze.github.io/yournewlife.com//" target="_blank">BitLife</a>
+          <a class="link-button" href="https://zeuriblaze.github.io/ranchlikeagoodperson/" target="_blank">Slime Ranches</a>
+                         <a class="link-button" href=" https://zeuriblaze.github.io/hvjbsksjehnubsuuiseujnubhiygbhkjhbguvtjbh-guyrctdecfyhgyrfd6yfvgjtyhbyghbjbyghbkygutfrfyr/" target="_blank">Ragdoll Archers</a>
+
+
+    </div>
+
+</body>
+</html>e
