@@ -19,8 +19,62 @@
         h1 {
             color: white;
             text-shadow: 2px 2px 10px rgba(0,0,0,0.2);
-            margin-bottom: 30px;
+            margin-bottom: 20px;
         }
+
+        /* --- SEARCH BAR WRAPPER --- */
+        .search-wrap {
+            margin-bottom: 30px;
+            width: 100%;
+            max-width: 400px;
+            display: flex;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 25px;
+            padding: 10px 20px;
+        }
+
+        #game-search {
+            background: transparent;
+            border: none;
+            outline: none;
+            color: white;
+            font-size: 16px;
+            width: 100%;
+            margin-left: 10px;
+        }
+
+        #game-search::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* --- CLEAR BUTTON (X) --- */
+        .clear-btn {
+            cursor: pointer;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            margin-left: 10px;
+            display: none; /* Hidden by default */
+            user-select: none;
+        }
+
+        /* --- NO RESULTS MESSAGE --- */
+        #no-results {
+            display: none;
+            color: white;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 15px 30px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            margin-bottom: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        /* --- BUTTONS --- */
         .button-container {
             display: flex;
             flex-wrap: wrap;
@@ -29,8 +83,9 @@
             width: 100%;
             max-width: 800px;
         }
+
         .link-button {
-            width: calc(23% - 10px); 
+            width: calc(23% - 10px);
             min-width: 80px;
             padding: 20px 5px;
             text-align: center;
@@ -43,7 +98,6 @@
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.2);
-            
             transition: transform 0.2s, background 0.2s;
             box-sizing: border-box;
         }
@@ -52,33 +106,25 @@
             transform: translateY(-3px);
             background: rgba(255, 255, 255, 0.5);
         }
+
         @media (max-width: 600px) {
-            .link-button {
-                width: calc(48% - 10px);
-                font-size: 13px;
-            }
+            .link-button { width: calc(48% - 10px); font-size: 13px; }
         }
     </style>
 </head>
 <body>
- <div class="search-wrap">
 
-        <span class="search-icon">🔍</span>
-
-        <input type="text" id="game-search" placeholder="Search games…" oninput="renderGames()" />
-
-      </div>
-
- <div class="select-wrap">
-
-<select id="*yourpagename*-letter-select" onchange="render*yourpagename*()"></select>
     <h1>Nothing Here Trust Website</h1>
 
-    <div class="button-container">
-    <a class="link-button" href="https://zeuriblaze.github.io/brotato-game/">Brotato: Paws and Claws</a>
-    <a class="link-button" href="https://zeuriblaze.github.io/hollowknightgame.com/">Hollow Knight</a>
-    <a class="link-button" href="https://zeuriblaze.github.io/RetroBowl/">RetroBowl</a>
-        
+    <div class="search-wrap">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="game-search" placeholder="Search games..." oninput="filterGames()">
+        <span id="clear-search" class="clear-btn" onclick="clearSearch()">×</span>
+    </div>
+
+    <p id="no-results">No games found! The game you searched for may be added soon! Try another search.</p>
+
+    <div class="button-container" id="game-container">
         <a class="link-button" href="https://zeuriblaze.github.io/uhueibjajgvgvjbhjbHJBGuih-UBHhjLUIBjgbGHLBbJBVgbLGTYf6utT67Tyig7UIf6uyUT8t6uUGUJGBylvtyg57y/" target="_blank">Tag</a>
         <a class="link-button" href="https://zeuriblaze.github.io/emeraldbotservers-777users/" target="_blank">Celeste</a>
         <a class="link-button" href="https://zeuriblaze.github.io/flyingoutofthewold/" target="_blank">Sky Riders</a>
@@ -89,9 +135,40 @@
                  <a class="link-button" href="  https://zeuriblaze.github.io/yournewlife.com//" target="_blank">BitLife</a>
           <a class="link-button" href="https://zeuriblaze.github.io/ranchlikeagoodperson/" target="_blank">Slime Ranches</a>
                          <a class="link-button" href=" https://zeuriblaze.github.io/hvjbsksjehnubsuuiseujnubhiygbhkjhbguvtjbh-guyrctdecfyhgyrfd6yfvgjtyhbyghbjbyghbkygutfrfyr/" target="_blank">Ragdoll Archers</a>
-
-
+          <a class="link-button" href="https://zeuriblaze.github.io/iyhkbyigkbhygibh-kyihkbn-jekhy7isdhkendzhbkyixnehkyxihbnejuhfhfalldownsimulator888/" target="_blank">Ragdoll Drop</a>
     </div>
 
+    <script>
+        function filterGames() {
+            const input = document.getElementById('game-search');
+            const clearBtn = document.getElementById('clear-search');
+            const noResults = document.getElementById('no-results');
+            const filter = input.value.toLowerCase();
+            const buttons = document.getElementsByClassName('link-button');
+            
+            let visibleCount = 0;
+            clearBtn.style.display = (input.value.length > 0) ? "block" : "none";
+
+            for (let i = 0; i < buttons.length; i++) {
+                const title = buttons[i].textContent || buttons[i].innerText;
+                if (title.toLowerCase().includes(filter)) {
+                    buttons[i].style.display = "";
+                    visibleCount++;
+                } else {
+                    buttons[i].style.display = "none";
+                }
+            }
+
+            noResults.style.display = (visibleCount === 0 && input.value.length > 0) ? "block" : "none";
+        }
+
+        function clearSearch() {
+            const input = document.getElementById('game-search');
+            input.value = '';
+            filterGames();
+            input.focus(); 
+        }
+    </script>
+
 </body>
-</html>e
+</html>
