@@ -4,8 +4,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nothing Here Trust</title>
     <style>
+        /* --- NEW ANIMATED BACKGROUND --- */
         body {
-            background: linear-gradient(135deg, #ffb347 0%, #87ceeb 100%);
+            /* Your custom colors: Light Orange, Purple, Sky Blue, Dark Blue */
+            background: linear-gradient(-45deg, #FFB347, #764BA2, #87CEEB, #0F0C29);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
             background-attachment: fixed;
             min-height: 100vh;
             margin: 0;
@@ -14,6 +18,12 @@
             align-items: center;
             font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
             padding: 40px 10px;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
 
         h1 {
@@ -51,14 +61,13 @@
             color: rgba(255, 255, 255, 0.7);
         }
 
-        /* --- CLEAR BUTTON (X) --- */
         .clear-btn {
             cursor: pointer;
             color: white;
             font-weight: bold;
             font-size: 18px;
             margin-left: 10px;
-            display: none; /* Hidden by default */
+            display: none;
             user-select: none;
         }
 
@@ -74,7 +83,7 @@
             border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
-        /* --- BUTTONS --- */
+        /* --- GAME BUTTONS --- */
         .button-container {
             display: flex;
             flex-wrap: wrap;
@@ -125,18 +134,25 @@
     <p id="no-results">No games found! The game you searched for may be added soon! Try another search.</p>
 
     <div class="button-container" id="game-container">
-        <a class="link-button" href="https://zeuriblaze.github.io/uhueibjajgvgvjbhjbHJBGuih-UBHhjLUIBjgbGHLBbJBVgbLGTYf6utT67Tyig7UIf6uyUT8t6uUGUJGBylvtyg57y/" target="_blank">Tag</a>
-        <a class="link-button" href="https://zeuriblaze.github.io/emeraldbotservers-777users/" target="_blank">Celeste</a>
-        <a class="link-button" href="https://zeuriblaze.github.io/flyingoutofthewold/" target="_blank">Sky Riders</a>
-          <a class="link-button" href="https://zeuriblaze.github.io/spamliketheresnotomarrow/" target="_blank">Cookie Clicker</a>
-        <a class="link-button" href="https://zeuriblaze.github.io/parkour/" target="_blank">Dadish</a>
-         <a class="link-button" href="https://zeuriblaze.github.io/fishfishfishfishfishfishfishfishfishfishfishfishfishfishfishfishfishfishfishfishfish/" target="_blank">Tiny Fishing</a>
-         <a class="link-button" href="https://zeuriblaze.github.io/smashorpass_youpickdeathandestruction/" target="_blank">Burrito Bison</a>
-                 <a class="link-button" href="  https://zeuriblaze.github.io/yournewlife.com//" target="_blank">BitLife</a>
-          <a class="link-button" href="https://zeuriblaze.github.io/ranchlikeagoodperson/" target="_blank">Slime Ranches</a>
-                         <a class="link-button" href=" https://zeuriblaze.github.io/hvjbsksjehnubsuuiseujnubhiygbhkjhbguvtjbh-guyrctdecfyhgyrfd6yfvgjtyhbyghbjbyghbkygutfrfyr/" target="_blank">Ragdoll Archers</a>
-          <a class="link-button" href="https://zeuriblaze.github.io/iyhkbyigkbhygibh-kyihkbn-jekhy7isdhkendzhbkyixnehkyxihbnejuhfhfalldownsimulator888/" target="_blank">Ragdoll Drop</a>
-    </div>
+        
+<a class="link-button" href="https://zeuriblaze.github.io/uhueibjajgvgvjbhjbHJBGuih-UBHhjLUIBjgbGHLBbJBVgbLGTYf6utT67Tyig7UIf6uyUT8t6uUGUJGBylvtyg57y/" target="_blank">Tag</a> 
+<a class="link-button" href="https://zeuriblaze.github.io/emeraldbotservers-777users/" target="_blank">Celeste</a> 
+<a class="link-button" href="https://zeuriblaze.github.io/flyingoutofthewold/" target="_blank">Sky Riders</a> 
+<a class="link-button" href="https://zeuriblaze.github.io/spamliketheresnotomarrow/" target="_blank">Cookie Clicker</a> 
+<a class="link-button" href="https://zeuriblaze.github.io/parkour/" target="_blank">Dadish</a> 
+<a class="link-button" href="https://zeuriblaze.github.io/fishfishfishfishfishfishfishfishfishfishfishfishfishfishfishfishfishfishfishfishfish/" target="_blank">Tiny Fishing</a> 
+<a class="link-button" href="https://zeuriblaze.github.io/smashorpass_youpickdeathandestruction/" target="_blank">Burrito Bison</a> 
+<a class="link-button" href="https://zeuriblaze.github.io/yournewlife.com/" target="_blank">BitLife</a> 
+<a class="link-button" href="https://zeuriblaze.github.io/ranchlikeagoodperson/" target="_blank">Slime Ranches</a> 
+<a class="link-button" href="https://zeuriblaze.github.io/hvjbsksjehnubsuuiseujnubhiygbhkjhbguvtjbh-guyrctdecfyhgyrfd6yfvgjtyhbyghbjbyghbkygutfrfyr/" target="_blank">Ragdoll Archers</a> 
+<a class="link-button" href="https://zeuriblaze.github.io/iyhkbyigkbhygibh-kyihkbn-jekhy7isdhkendzhbkyixnehkyxihbnejuhfhfalldownsimulator888/" target="_blank">Ragdoll Drop</a>
+<a class="link-button" href="https://zeuriblaze.github.io/khbfryibwbyifwe/" target="_blank">Pokemon: FireRed</a>
+<a class="link-button" href="https://zeuriblaze.github.io/bjufyuhrfbgfwbufbfybah-brauhbahubahubfrvyaubreagbwfybwhyufhewybfyfehyfeh3fuhyf4ehyfehfehy/" target="_blank">Motox3m 6 Spooky Land</a>
+<a class="link-button" href="https://zeuriblaze.github.io/hollowknightgame.com/" target="_blank">Hollow Knight</a>
+<a class="link-button" href="https://zeuriblaze.github.io/gambleyourlifesavingsaway.com/target="_blank">Clover Pit</a>
+<a class="link-button" href="https://zeuriblaze.github.io/bewareofthesharksandunforseenbugs.net//target="_blank">Tube Jumpers</a>
+
+
 
     <script>
         function filterGames() {
@@ -147,6 +163,7 @@
             const buttons = document.getElementsByClassName('link-button');
             
             let visibleCount = 0;
+
             clearBtn.style.display = (input.value.length > 0) ? "block" : "none";
 
             for (let i = 0; i < buttons.length; i++) {
@@ -166,7 +183,7 @@
             const input = document.getElementById('game-search');
             input.value = '';
             filterGames();
-            input.focus(); 
+            input.focus();
         }
     </script>
 
