@@ -122,32 +122,34 @@
     </style>
 </head>
     <style>
- .link-button {
-  /* Layout: Fixes the extra space at the bottom */
+.link-button {
+  /* Layout: Fixes the extra space and adds height */
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
   line-height: 1 !important;
   text-decoration: none !important;
-  padding: 12px 24px !important;
-  margin: 8px;
+  
+  /* Increased first number (20px) makes it taller */
+  padding: 20px 30px !important; 
+  margin: 10px;
   
   /* Style: White, Rounded, and Translucent */
-  background-color: rgba(255, 255, 255, 0.3) !important; /* White at 30% transparency */
+  background-color: rgba(255, 255, 255, 0.3) !important;
   color: white !important;
-  border-radius: 50px !important; /* This makes the ends perfectly rounded */
-  border: 1px solid rgba(255, 255, 255, 0.5); /* Subtle white border */
+  border-radius: 50px !important; 
+  border: 1px solid rgba(255, 255, 255, 0.5);
   
-  /* Effects: Blurs what is behind the button */
+  /* Effects */
   backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px); /* Supports Safari */
-  
-  transition: 0.3s ease; /* Makes it glow smoothly when you hover */
+  -webkit-backdrop-filter: blur(8px);
+  transition: 0.3s ease;
+  font-weight: bold; /* Optional: makes text pop more on the taller button */
 }
 
 .link-button:hover {
-  background-color: rgba(255, 255, 255, 0.5) !important; /* Brighter when you touch it */
-  transform: translateY(-2px); /* Lifts the button slightly */
+  background-color: rgba(255, 255, 255, 0.5) !important;
+  transform: scale(1.05); /* Slightly grows the button when hovered */
 }
 </style>
 <body>
