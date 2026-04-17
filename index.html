@@ -120,38 +120,47 @@
             .link-button { width: calc(48% - 10px); font-size: 13px; }
         }
     </style>
-    /* This part goes on the container around the buttons */
-.button-container {
-  display: flex;
-  flex-wrap: wrap; /* Allows buttons to drop to the next line */
-  justify-content: center;
-  gap: 10px; /* Space between the buttons */
-  width: 100%;
-}
-
-.link-button {
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  
-  /* Set width to slightly less than 25% to fit 4 per row */
-  width: calc(23% - 10px) !important; 
-  box-sizing: border-box !important;
-  
-  line-height: 1 !important;
-  text-decoration: none !important;
-  padding: 20px 10px !important; /* Kept them tall like you asked */
-  
-  background-color: rgba(255, 255, 255, 0.3) !important;
-  color: white !important;
-  border-radius: 50px !important;
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  transition: 0.3s ease;
-  font-weight: bold;
-}
 </head>
+    <style>
+  /* This container makes the 4-wide layout work */
+  .button-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .link-button {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    line-height: 1 !important;
+    text-decoration: none !important;
+    padding: 20px 10px !important;
+    margin: 5px;
+    
+    /* White, Rounded, Translucent */
+    background-color: rgba(255, 255, 255, 0.3) !important;
+    color: white !important;
+    border-radius: 50px !important;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    font-weight: bold;
+    box-sizing: border-box !important;
+  }
+
+  /* Desktop: 4 wide */
+  @media (min-width: 601px) {
+    .link-button { width: calc(25% - 20px) !important; }
+  }
+
+  /* Mobile: 2 wide */
+  @media (max-width: 600px) {
+    .link-button { width: calc(50% - 20px) !important; }
+  }
+</style>
 <body>
 
     <h1>Nothing Here Trust Website</h1>
