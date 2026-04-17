@@ -166,10 +166,15 @@
     <h1>Nothing Here Trust Website</h1>
 
     <div class="search-wrap">
-        <span class="search-icon">🔍</span>
-        <input type="text" id="game-search" placeholder="Search games..." oninput="filterGames()">
-        <span id="clear-search" class="clear-btn" onclick="clearSearch()">×</span>
-    </div>
+  <span class="search-icon">🔍</span>
+  <input type="text" id="game-search" placeholder="Search games..." oninput="filterGames()">
+  <span id="clear-search" class="clear-btn" onclick="clearSearch()">×</span>
+</div>
+
+<!-- This message will stay hidden until someone types a name that doesn't exist -->
+<div id="no-results" style="display: none; text-align: center; color: white; padding: 20px;">
+  No games found. Try a different search!
+</div>
 
     <p id="no-results">No games found! The game you searched for may be added soon! Try another search.</p>
 
@@ -196,35 +201,34 @@
 
     <script>
         function filterGames() {
-            const input = document.getElementById('game-search');
-            const clearBtn = document.getElementById('clear-search');
-            const noResults = document.getElementById('no-results');
-            const filter = input.value.toLowerCase();
-            const buttons = document.getElementsByClassName('link-button');
-            
-            let visibleCount = 0;
+  const input = document.getElementById("game-search");
+  const filter = input.value.toLowerCase();
+  const buttons = document.querySelectorAll(".link-button");
+  const noResultsMessage = document.getElementById("no-results"); // Ensure this ID exists!
+  
+  let hasMatches = false;
 
-            clearBtn.style.display = (input.value.length > 0) ? "block" : "none";
+  buttons.forEach(button => {
+    const gameTitle = button.textContent.toLowerCase();
+    
+    if (gameTitle.includes(filter)) {
+      button.style.display = "inline-flex"; // Shows the button
+      hasMatches = true;
+    } else {
+      button.style.display = "none"; // hides the button
+    }
+  });
 
-            for (let i = 0; i < buttons.length; i++) {
-                const title = buttons[i].textContent || buttons[i].innerText;
-                if (title.toLowerCase().includes(filter)) {
-                    buttons[i].style.display = "";
-                    visibleCount++;
-                } else {
-                    buttons[i].style.display = "none";
-                }
-            }
+  // Only show the message if NO matches were found
+  if (noResultsMessage) {
+    noResultsMessage.style.display = hasMatches ? "none" : "block";
+  }
+}
 
-            noResults.style.display = (visibleCount === 0 && input.value.length > 0) ? "block" : "none";
-        }
-
-        function clearSearch() {
-            const input = document.getElementById('game-search');
-            input.value = '';
-            filterGames();
-            input.focus();
-        }
+function clearSearch() {
+  document.getElementById("game-search").value = "";
+  filterGames(); // Reset the list
+}
     </script>
 
 </body>
