@@ -171,6 +171,8 @@
   <span id="clear-search" class="clear-btn" onclick="clearSearch()">×</span>
 </div>
 
+<!-- The container must stay flex so the remaining buttons stay 4-wide -->
+<div class="button-container">
 <!-- This message will stay hidden until someone types a name that doesn't exist -->
 <div id="no-results" style="display: none; text-align: center; color: white; padding: 20px;">
   No games found. Try a different search!
@@ -202,32 +204,29 @@
     <script>
         function filterGames() {
   const input = document.getElementById("game-search");
-  const filter = input.value.toLowerCase();
+  const filter = input.value.toLowerCase().trim();
   const buttons = document.querySelectorAll(".link-button");
-  const noResultsMessage = document.getElementById("no-results"); // Ensure this ID exists!
+  const noResultsMessage = document.getElementById("no-results");
   
-  let hasMatches = false;
+  let matchCount = 0;
 
   buttons.forEach(button => {
     const gameTitle = button.textContent.toLowerCase();
     
     if (gameTitle.includes(filter)) {
-      button.style.display = "inline-flex"; // Shows the button
-      hasMatches = true;
+      // "inline-flex" puts it back in the grid
+      button.style.display = "inline-flex"; 
+      matchCount++;
     } else {
-      button.style.display = "none"; // hides the button
+      // "none" removes it entirely so the grid narrows down
+      button.style.display = "none"; 
     }
   });
 
-  // Only show the message if NO matches were found
+  // Only show message if 0 matches exist
   if (noResultsMessage) {
-    noResultsMessage.style.display = hasMatches ? "none" : "block";
+    noResultsMessage.style.display = (matchCount === 0 && filter !== "") ? "block" : "none";
   }
-}
-
-function clearSearch() {
-  document.getElementById("game-search").value = "";
-  filterGames(); // Reset the list
 }
     </script>
 
