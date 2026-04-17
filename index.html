@@ -214,18 +214,21 @@
     const gameTitle = button.textContent.toLowerCase();
     
     if (gameTitle.includes(filter)) {
-      // "inline-flex" puts it back in the grid
-      button.style.display = "inline-flex"; 
+      // Force it to show and be part of the grid
+      button.style.setProperty('display', 'inline-flex', 'important');
       matchCount++;
     } else {
-      // "none" removes it entirely so the grid narrows down
-      button.style.display = "none"; 
+      // Force it to disappear and give up its space
+      button.style.setProperty('display', 'none', 'important');
     }
   });
 
-  // Only show message if 0 matches exist
   if (noResultsMessage) {
     noResultsMessage.style.display = (matchCount === 0 && filter !== "") ? "block" : "none";
+      function clearSearch() {
+  document.getElementById("game-search").value = "";
+  filterGames(); // This will now correctly use the !important rules to show all
+}
   }
 }
     </script>
