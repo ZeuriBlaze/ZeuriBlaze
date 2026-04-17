@@ -119,14 +119,28 @@
         @media (max-width: 600px) {
             .link-button { width: calc(48% - 10px); font-size: 13px; }
         }
-    </style>.link-button {
-  display: inline-block;
-  vertical-align: middle;
-  line-height: 1;
-  text-decoration: none;
-    }
-</style>
+    </style>
 </head>
+    <style>
+  .link-button {
+    /* Critical Fix: inline-flex removes the 'text-room' at the bottom */
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    
+    /* Forces height to fit the text exactly */
+    line-height: 1 !important;
+    padding: 10px 20px !important;
+    margin: 5px;
+    
+    /* Visuals - Change these to match your style */
+    background-color: #007bff;
+    color: white;
+    text-decoration: none !important;
+    border-radius: 4px;
+    font-family: sans-serif;
+  }
+</style>
 <body>
 
     <h1>Nothing Here Trust Website</h1>
