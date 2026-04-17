@@ -122,36 +122,58 @@
     </style>
 </head>
     <style>
+/* The container that holds all buttons */
+.button-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+/* Base style for the buttons */
 .link-button {
-  /* Layout: Fixes the extra space and adds height */
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
-  line-height: 1 !important;
   text-decoration: none !important;
+  line-height: 1 !important;
+  padding: 20px 10px !important;
   
-  /* Increased first number (20px) makes it taller */
-  padding: 20px 30px !important; 
-  margin: 10px;
-  
-  /* Style: White, Rounded, and Translucent */
+  /* White, Rounded, Translucent */
   background-color: rgba(255, 255, 255, 0.3) !important;
   color: white !important;
-  border-radius: 50px !important; 
+  border-radius: 50px !important;
   border: 1px solid rgba(255, 255, 255, 0.5);
-  
-  /* Effects */
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
+  
+  font-weight: bold;
   transition: 0.3s ease;
-  font-weight: bold; /* Optional: makes text pop more on the taller button */
+  box-sizing: border-box !important;
+}
+
+/* DESKTOP: 4 per row (Width is ~25%) */
+@media (min-width: 601px) {
+  .link-button {
+    width: calc(25% - 15px) !important;
+  }
+}
+
+/* MOBILE: 2 per row (Width is ~50%) */
+@media (max-width: 600px) {
+  .link-button {
+    width: calc(50% - 15px) !important;
+    padding: 15px 5px !important; /* Slightly smaller padding for small screens */
+  }
 }
 
 .link-button:hover {
   background-color: rgba(255, 255, 255, 0.5) !important;
-  transform: scale(1.05); /* Slightly grows the button when hovered */
+  transform: scale(1.02);
 }
-</style>
 <body>
 
     <h1>Nothing Here Trust Website</h1>
